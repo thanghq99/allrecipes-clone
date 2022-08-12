@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 
-const userController = require('../controllers/userController')
+const recipeController = require('../controllers/recipeController')
 
-router.post('/', userController.create)
-router.get('/:id', userController.getById)
-router.get('/', userController.getAll)
-router.put('/:id', userController.updateById)
-router.delete('/:id', userController.deleteById)
+router.post('/', recipeController.create)
+router.get('/:id', recipeController.getById)
+router.get('/', recipeController.getAll)
+router.put('/:id', recipeController.updateById)
+router.delete('/:id', recipeController.deleteById)
 
 module.exports = router
