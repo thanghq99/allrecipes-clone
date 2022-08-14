@@ -10,7 +10,7 @@ const recipeSchema = Schema({
         type: String,
         required: true
     },
-    image: String,
+    image: [String],
     ingredients: [{
         quantity: { type: Number, required: true },
         unit: { type: String, required: true },
@@ -19,7 +19,7 @@ const recipeSchema = Schema({
     directions: [String],
     nutriInfo: {
         serving: { type: Number, required: true},
-        yeild: { String }
+        yeild: String
     },
     time: {
         prepTime: Number,
@@ -32,7 +32,8 @@ const recipeSchema = Schema({
     notes: [{
         title: String,
         content: String
-    }]
+    }],
+    owner: mongoose.SchemaTypes.ObjectId
 })
 
 const recipe = mongoose.model('Recipe', recipeSchema)
